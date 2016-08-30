@@ -1,10 +1,13 @@
 {
     "plugins": [
-        "anchorjs"
+        "anchorjs", "codepen"
     ],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
-        }
+        },
+        "codepen": {
+         "height": 400
+       }
     }
 }
