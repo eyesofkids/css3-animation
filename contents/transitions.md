@@ -15,7 +15,11 @@ background: #ff2956;
 }
 ```
 
-轉場特效使用四個CSS屬性來進行定義，這些屬性可以合併到一個`transition`屬性之中:
+下面是我們的第一個範例，左邊的是用上面的定義的方形，右邊的有另外加一行`transition: 1s;`的定義，它會在滑鼠游標在上面時，出現轉場效果，你可以比對看看。
+
+[](codepen://eyesofkids/vXBOAA/)
+
+轉場特效使用四個CSS屬性來進行定義，這些屬性可以整個合併到一個`transition`屬性之中:
 
 - transition-property: 定義哪些CSS屬性會被轉場效果影響。除了這些被指定的屬性，其他的轉場一如以往的會在瞬間完成。要特別注意的是，並非所有的CSS屬性都可以進行轉場，可用的屬性所有清單在[這份資料](http://oli.jp/2010/css-animatable-properties/)與[可進行動畫的屬性](https://www.w3.org/TR/2009/WD-css3-transitions-20091201/#animatable-properties-)，其中也包含了SVG的屬性。如果這個屬性定義為`transform`，代表任何使用了`transform`的屬性都會被偵測來進行動畫。如果這個屬性定義為`all`，就會自動偵測所有可進行動畫的屬性，包含`transform`影響的屬性。預設值就是`all`。
 
