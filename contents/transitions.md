@@ -21,11 +21,11 @@ background: #ff2956;
 
 轉場特效使用四個CSS屬性來進行定義，這些屬性可以整個合併到一個`transition`屬性之中:
 
-- transition-property: 定義哪些CSS屬性會被轉場效果影響。除了這些被指定的屬性，其他的轉場一如以往的會在瞬間完成。要特別注意的是，並非所有的CSS屬性都可以進行轉場，可用的屬性所有清單在[這份資料](http://oli.jp/2010/css-animatable-properties/)與[可進行動畫屬性](https://www.w3.org/TR/2009/WD-css3-transitions-20091201/#animatable-properties-)，其中也包含了SVG的屬性。如果這個屬性定義為`transform`，代表任何使用了`transform`的屬性都會被偵測來進行動畫。如果這個屬性定義為`all`，就會自動偵測所有可進行動畫的屬性，包含`transform`影響的屬性。預設值就是`all`。
+- **transition-property**: 定義哪些CSS屬性會被轉場效果影響。除了這些被指定的屬性，其他的轉場一如以往的會在瞬間完成。要特別注意的是，並非所有的CSS屬性都可以進行轉場，可用的屬性所有清單在[這份資料](http://oli.jp/2010/css-animatable-properties/)與[可進行動畫屬性](https://www.w3.org/TR/2009/WD-css3-transitions-20091201/#animatable-properties-)，其中也包含了SVG的屬性。如果這個屬性定義為`transform`，代表任何使用了`transform`的屬性都會被偵測來進行動畫。如果這個屬性定義為`all`，就會自動偵測所有可進行動畫的屬性，包含`transform`影響的屬性。預設值就是`all`。
 
-- transition-duration: 定義轉場的持續時間。可以只定義一個時間給所有屬性使用，也可以分別給定不同時間。時間通常以`s`為單位(秒)，可以定義小數點例如`0.5s`或`.5s`，預設值是`0s`。
+- **transition-duration**: 定義轉場的持續時間。可以只定義一個時間給所有屬性使用，也可以分別給定不同時間。時間通常以`s`為單位(秒)，可以定義小數點例如`0.5s`或`.5s`，預設值是`0s`。
 
-- transition-timing-function: 時間函式，即設定轉場過程時所使用的貝茲曲線。內建的幾個數值如下，在[這個頁面](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)中看到所有的預設動作範例:
+- **transition-timing-function**: 時間函式，這是用來設定轉場過程時所使用的貝茲曲線。內建的幾個可直接使用數值如下，直接使用名稱就可以取用。在[這個頁面](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)中看到所有的預設值的範例:
 
   - ease
   - linear
@@ -37,11 +37,11 @@ background: #ff2956;
   - steps()
   - cubic-bezier()
 
-其中`cubic-bezier()`的數值，可以到[cubic-bezier.com](http://cubic-bezier.com/)來自訂所需要的貝茲曲線參數值，或是到這一頁[Easing函數](http://easings.net/zh-tw)的裡面挑選你想要的Easing函數。預設值是`ease`。
+其中`cubic-bezier()`的數值，可以到[cubic-bezier.com](http://cubic-bezier.com/)來自訂所需要的貝茲曲線參數值，或是到這一頁[Easing函數](http://easings.net/zh-tw)或[CSS EASING ANIMATION TOOL](https://matthewlein.com/ceaser/)的裡面挑選你想要的Easing函數，使用四個數字值可以產生一個貝茲曲線。預設值是`ease`。
 
-- transition-delay: 定義多久之後開始發生轉場，這是一個延遲開始的時間。時間通常以`s`為單位(秒)，可以定義小數點例如`0.5s`，預設值是`0s`。
+- **transition-delay**: 定義多久之後開始發生轉場，這是一個延遲開始的時間。時間通常以`s`為單位(秒)，可以定義小數點例如`0.5s`或`.5s`，預設值是`0s`。
 
-合併寫法是按照上面的依順寫成一行，所以如果都是以預設值來寫CSS定義的話，會看到非常簡單的寫法像這樣:
+`transition`屬性的合併寫法是按照上面的順序依次寫成一整行，所以如果都是以預設值來寫CSS定義的話，可以用非常簡單的寫法像這樣:
 
 ```
 transition: .5s;
@@ -52,6 +52,8 @@ transition: .5s;
 ```
 transition: all .5s ease;
 ```
+
+> 註: 雖然你可以用`ms`(微秒，千分之一秒)為單位來設定持續與延遲開始時間，但似乎不必要，因為太短暫的時間差人眼無法感覺差異。
 
 你也可以為每個不同的CSS屬性分別設定轉場的動畫定義:
 
@@ -82,10 +84,17 @@ border-radius: 50%;
 
 ## 供應商前綴字(Vendor Prefixes)
 
-供應商前綴字的出現是一個瀏覽器不同品牌的廠商搶先於標準完成前，就開始發佈已實作功能造成的結果。因為這些CSS屬性有可能在瀏覽器中是屬於實驗性質的，所以在前面加上了瀏覽器供應商的前綴字，代表是要開啟這個實驗性的CSS屬性，這到後來變成一個要為了相容不同瀏覽器的特殊寫法。而且，這不只是針對CSS3動畫相關的屬性，在一些新式的屬性，例如陰影或漸層，都有需要使用供應商前綴字的情況。由於瀏覽器新版本都自動偵測支援，現在這個問題會比較少見了。
+供應商前綴字的出現是由於瀏覽器不同品牌的廠商，搶先於標準完成前就開始發佈已包含實作功能造成的結果。因為這些CSS屬性有可能在瀏覽器中有可能是屬於實驗性質的，所以在前面加上了瀏覽器供應商的前綴字，代表是要開啟這個實驗性的CSS屬性，到後來變成一個要為了相容不同瀏覽器的特殊寫法。而且，這不只是針對CSS3動畫相關的屬性，在一些新式的屬性，例如陰影或漸層，都有需要使用供應商前綴字的情況。由於瀏覽器新版本都自動偵測支援，現在這個問題會比較少見了。
 
-要記住哪一些是需要加供應商前綴字，哪一些不用，是件令人頭痛的事情。一般都會使用一些工具來幫忙轉換，例如:
+不過，要記住哪一些屬性是需要加供應商前綴字，哪一些則不用，這是件非常令人頭痛的事情。一般都會使用一種叫Autoprefixer(自動前綴字產生器)的工具來幫忙轉換，例如下面的工具:
 
 - 各種編輯器中的[Autoprefixer外掛功能](https://github.com/postcss/autoprefixer#text-editors-and-ide)
 - [Autoprefixer CSS online](https://autoprefixer.github.io/)線上轉換工具
 - [Pleeease](http://pleeease.io/play/)線上轉換工具
+
+現在一般來說只需要加上`-webkit-`前綴字即可，例如以下的範例:
+
+```
+-webkit-transition: background .2s linear, border-radius 1s ease-in 1s;
+transition: background .2s linear, border-radius 1s ease-in 1s;
+```

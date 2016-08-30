@@ -6,5 +6,6 @@
    * [更新日誌](changelog.md)
    * [問答與回饋](issue.md)
 * 主要內容
-   * [CSS3關於動畫介紹](contents/codepentest.md)
-   * [CSS3轉場效果](contents/transitions.md)
+   * [CSS3中的動畫比較](contents/intro.md)
+   * [CSS3轉場](contents/transitions.md)
+   * [CSS3動畫(關鍵影格)](contents/keyframe.md)
