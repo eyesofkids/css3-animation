@@ -2,9 +2,9 @@
 
 新式的CSS3中就已經有包含動畫的可定義值，內容相當的完整。CSS動畫指的是使用以CSS定義為主的動畫效果，又可以分成以下兩類:
 
-- CSS轉場/過渡(transitions): 主要以開始狀態、結束狀態與持續期間(duration)三種參數，以及可指定的漸變函數(transition timing function)，將DOM元素或網頁上的物件進行轉變。
+- CSS3轉場/過渡(transitions): 主要以開始狀態、結束狀態與持續期間(duration)三種參數，以及可指定的漸變函數(transition timing function)，將DOM元素或網頁上的物件進行轉變。
 
-- CSS動畫(animations): 又稱為關鍵影格(Keyframe)動畫，可以加入關鍵影格，提供許多動畫片段的組合。
+- CSS3動畫(animations): 又稱為關鍵影格(Keyframe)動畫，可以加入關鍵影格，提供許多動畫片段的組合。
 
 以CSS定義為主的動畫相較於使用JavaScript程式為主的動畫有一些好處:
 
@@ -14,7 +14,7 @@
 
 因此，在一些簡單的UI元件互動時、不需要太多互動性的廣告看板，亦或是進場或退場的區塊特效，都是使用CSS定義的動畫就可以達成。
 
-## CSS轉場(transitions)與CSS動畫(animations)的"相同"之處
+## CSS3轉場(transitions)與CSS3動畫(animations)的"相同"之處
 
 - 都是使用CSS定義，然後監聽DOM元素的改變作出動畫效果
 - 都可以設定漸變函數(transition timing function)，控制動畫的運動(效果展現)的曲線
@@ -22,7 +22,7 @@
 - 都有對應的event(事件)，可以送出動畫的狀態，可讓JavaScript再加以監聽或控制(可程式化)
 - 都可以用視覺化方式看到CSS屬性正在改變的狀態
 
-## CSS轉場(transitions)與CSS動畫(animations)的"不同"之處
+## CSS3轉場(transitions)與CSS3動畫(animations)的"不同"之處
 
 ### 觸發(Trigger)方式不同
 
@@ -49,3 +49,9 @@
 轉場(transitions)很容易可以搭配JavaScript程式作額外的互動應用。
 
 動畫(animations)比較不容易，但仍然是可以搭配JavaScript使用。
+
+## 瀏覽器的相容性
+
+CSS3轉場(transitions)的相容性，根據[Can I use](http://caniuse.com/#search=CSS3%20Transitions)網站的資料，在目前的9成以上的新版本瀏覽器都可以支援。比較會有問題的是舊版的IE9以下的版本無法支援。
+
+CSS3動畫(animations)的相容性，根據[Can I use](http://caniuse.com/#search=CSS3%20Animation)網站的資料，與CSS3轉場(transitions)的相容性情況類似，在IE9以下無法使用，要特別注意的是在一些舊版本的Android 3以下，只有提供部份的支援。
