@@ -80,7 +80,7 @@ HTML碼的基本結構如下，`scene`是一個場景，`cube`則是在這個場
 
 左面(left)與右面(right)，除了以Z軸平移100px外，再加上以Y軸為準旋轉90度與-90度的變形即可，這與背面(back)有點類似。
 
-```js
+```css
 .left {
   background: rgba(0, 0, 196, 0.7);
   transform: rotateY(-90deg) translateZ(100px);
