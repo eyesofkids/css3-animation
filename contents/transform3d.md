@@ -117,4 +117,6 @@ HTML碼的基本結構如下，`scene`是一個場景，`cube`則是在這個場
 
 最後的範例結果如下，因為要讓它看起來像是個正方體，我加上了以Y軸旋轉的CSS3動畫:
 
-[](codepen://eyesofkids/VKkXmE)
+[](codepen://eyesofkids/VKkXmE?height=500)
+
+這幾個屬性的用法都可以在正方體中看到。花點時間調整一下其中的數值應該很容易理解。
