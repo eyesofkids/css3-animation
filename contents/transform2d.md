@@ -28,9 +28,9 @@
 
 平移(translate)將目前的DOM元素或物件進行X軸或Y軸的移動，也就是左/右、上/下的移動。數值可以使用CSS中的正負長度數值(px, em, in)，或是百分比。變形模組中提供了三種函式可供使用，分別為:
 
-- translate( <length> | <percentage> [, <length> | <percentage> ]? )
-- translateX( <length> | <percentage> )
-- translateY( <length> | <percentage> )
+- `translate( <length> | <percentage> [, <length> | <percentage> ]? )`
+- `translateX( <length> | <percentage> )`
+- `translateY( <length> | <percentage> )`
 
 範例:
 
@@ -41,9 +41,9 @@
 
 傾斜(skew)將目前的DOM元素或物件進行X軸或Y軸以某個角度進行傾斜，角度也是使用正負數後面加上`deg`來代表。
 
-- skew( <angle> [, <angle> ]? )
-- skewX( <angle> )
-- skewY( <angle> )
+- `skew( <angle> [, <angle> ]? )`
+- `skewX( <angle> )`
+- `skewY( <angle> )`
 
 範例:
 
