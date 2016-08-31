@@ -14,7 +14,7 @@
 
 因此，在一些簡單的UI元件互動時、不需要太多互動性的廣告看板，亦或是進場或退場的區塊特效，都是使用CSS定義的動畫就可以達成。
 
-## CSS3轉場(transitions)與CSS3動畫(animations)的"相同"之處
+## CSS3轉場與CSS3動畫的"相同"之處
 
 - 都是使用CSS定義，然後監聽DOM元素的改變作出動畫效果
 - 都可以設定漸變函數(transition timing function)，控制動畫的運動(效果展現)的曲線
@@ -22,9 +22,9 @@
 - 都有對應的event(事件)，可以送出動畫的狀態，可讓JavaScript再加以監聽或控制(可程式化)
 - 都可以用視覺化方式看到CSS屬性正在改變的狀態
 
-## CSS3轉場(transitions)與CSS3動畫(animations)的"不同"之處
+## CSS3轉場與CSS3動畫的"不同"之處
 
-### 觸發(Trigger)方式不同
+### 觸發(Trigger)方式
 
 轉場(transitions)觸發使用`:hover`僞(pseudo)類別為最經常使用，其他可觸發的還有`:active`、`:focus`、`:checked`等等，另一種方式是使用JavaScript語言動態加入或移除CSS類別，更多範例可以參考[這一篇範例](https://www.impressivewebs.com/css3-transitions-without-hover/)。
 
