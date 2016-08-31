@@ -35,7 +35,7 @@ HTML碼的基本結構如下，`scene`是一個場景，`cube`則是在這個場
 </div>
 ```
 
-每一面的CSS共同的屬性定義如下，我們定義它為200x200像素的大小，並可在裡面呈現置中的文字，文字的顏色、大小等等定義:
+每一面的CSS共同的屬性定義如下，我們定義它為200x200像素的大小，並可在裡面呈現置中的文字，文字的顏色、大小等等定義。其中有一個屬性`backface-visibility`，它可以控制要不要看到被擋住的那些面，可以使用`visible`與`hidden`，預設是看不到被擋住的面也就是`hidden`。這裡的範例是使用`visible`，讓我們能透視看得到被擋住的面:
 
 ```css
 .cube div {
@@ -47,6 +47,7 @@ HTML碼的基本結構如下，`scene`是一個場景，`cube`則是在這個場
   font-size: 40px;
   color: white;
   text-align: center;
+  backface-visibility: visible;
 }
 ```
 
