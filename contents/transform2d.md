@@ -57,7 +57,7 @@
 
 在進行變形時，預設的變形原點都是物件或DOM元素的中心點，用變形原點(transform-origin)可以改變變型的基準點，例如作旋轉變形時可以依照不同的原點位置來進行旋轉。改變原點對於旋轉與縮放會比較明顯看得出不同。
 
-變形原點(transform-origin)可以用正負數值來代表對原來原點的偏移量(X軸偏移量與Y軸偏移量)，或是用top/bottom、left/right等組合來直接定義新的位置。
+變形原點(transform-origin)可以用正負數值來代表對原來原點的偏移量(X軸偏移量與Y軸偏移量)，或是用top/center/bottom(top = 0%, bottom=100%)、left/center/right(left = 0%, right = 100%)等組合來直接定義新的位置。
 
 範例，注意變形原點是在`.box`類別中定義，而不是`:hover`裡:
 
