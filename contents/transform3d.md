@@ -6,7 +6,35 @@
 
 實際上螢幕上只有2維，3維是模擬出來的效果。也就是以2次元模擬出3次元的形狀。3D相較於2D多了一個Z軸的數值。基礎的3D的三個軸，X軸是螢幕上的水平座標軸，Y軸是垂直座標軸，Z軸則是由螢幕射出的另一個虛擬的座標軸，它代表的是DOM元素(或物件)的遠近距離。負值的Z軸數值是比原先的元素還愈遠，也就是愈小，正值代表愈近，也就是愈大。
 
-`perspective`中文是"透視"的意思，在3D設計中是一個重要的屬性，它代表了Z軸為0(z=0)到使用者(觀看者)的距離(也可以稱為深度)，以這個觀測距離來決定物件的大小(遠近)情況，當超過這個觀測距離，DOM元素(物件)將會不可見。以下為最簡單的兩種範例:
+`perspective`中文是"透視"的意思，在3D設計中是一個重要的屬性，它代表了Z軸為0(z=0)到觀看者的距離(也可以稱為深度)，以這個觀測距離來決定物件的大小(遠近)情況，當超過這個觀測距離，DOM元素(物件)將會不可見。根據[這份資料](https://developer.apple.com/library/safari/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Using2Dand3DTransforms/Using2Dand3DTransforms.html)的說明，`perspective`設定為300px或更少時，會有強烈的失真，500px到1000px的失真較為中等，2000px以上的失真就很輕微。
+
+一般來說，我們會在要進行3D變形的外層容器元素來定義`perspective`，這樣包含在其內的子元素(物件)都可以按照這個深度來進行變形。`perspective`的設定方式有兩種，一種是直接定義`perspective`屬性:
+
+```
+perspective: 500px;
+```
+
+另一種是定義在transform中，以類似函式的方式來定義數值:
+
+```
+transform: perspective(250px);
+```
+
+一個使用`rotateX`旋轉正45度的範例如下，你可以增加或減少`perspective`的數值來觀察變形的情況:
+
+[](codepen://eyesofkids/ozvavz?height=500)
+
+https://drafts.csswg.org/css-transforms/#perspective
+
+https://developer.apple.com/library/safari/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Using2Dand3DTransforms/Using2Dand3DTransforms.html
+
+http://www.slideshare.net/kswlee/css3-2d3d-transform
+
+https://www.git-tower.com/blog/css3-transforms/
+
+https://dev.opera.com/articles/understanding-3d-transforms/#perspective
+
+以下為最簡單的兩種範例:
 
 下面是使用`perspective`(透視)加上`translateZ`(以Z軸平移)的範例，你可以看到當移動的長度為負數與正數的差異。
 
@@ -16,7 +44,9 @@
 
 [](codepen://eyesofkids/ALAVgX)
 
-觀測者的原點是可以用另一個屬性`perspective-origin`來改變，稱之為透視原點或消失點(vanishing point, 到最遠處消失的那個點)，這個屬性可以使用X軸與Y軸的長度數值或百分比(原點為0%)，或是像或是用top/center/bottom、left/center/right等組合來直接定義新的位置，正中央為50%，數值是center。Z軸的原點則是永遠都是在螢幕的位置，要藉由`perspective`來移動觀測者的位置。
+觀測者的原點是可以用另一個屬性`perspective-origin`來改變，稱之為透視原點或消失點(vanishing point, 到最遠處消失的那個點)，這個屬性可以使用X軸與Y軸的長度數值或百分比(原點為0%)，或是像或是用top/center/bottom、left/center/right等組合來直接定義新的位置，正中央為50%，數值是center。`perspective-origin`與`perspective`合併可以形成透視矩陣(perspective matrix)。
+
+https://www.smashingmagazine.com/2016/07/front-end-challenge-accepted-css-3d-cube/
 
 要進一步講解3D的特性需要先畫出一個cube(正方體, 骰子)，比較容易理解。我們用變形函式中的rotate與translate搭配，可以先畫出一個正方體。
 
